@@ -1,0 +1,15 @@
+section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    align-content: center;
+}
+
+section a{
+    background-color: gray;
+    color: white;
+    border-radius: 10px;
+    padding:  80px 0;
+    text-align: center;
+    margin: 10px;
+}
