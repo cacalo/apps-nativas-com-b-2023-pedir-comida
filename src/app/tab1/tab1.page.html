@@ -8,6 +8,10 @@
 
 <ion-content [fullscreen]="true">
   <section>
-    <a *ngFor="let item of categorias">{{item}}</a>
+    <a *ngFor="let item of categorias"
+      [ngStyle]="{'background-image':'url('+item.fotoUrl+')'}"
+    >
+      <span>{{item.nombre}}</span>
+    </a>
   </section>
 </ion-content>
