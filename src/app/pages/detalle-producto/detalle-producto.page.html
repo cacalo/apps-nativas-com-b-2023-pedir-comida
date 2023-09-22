@@ -24,10 +24,10 @@
       {{producto.descripcion}} - ${{producto.precio}}
     </ion-card-content>
 
-    <ion-button fill="clear">-1</ion-button>
-    <span>1</span>
-    <ion-button fill="clear">+1</ion-button>
-    <ion-button fill="clear">Agregar al carrito</ion-button>
+    <ion-button fill="clear" (click)="cantidad= cantidad-1">-1</ion-button>
+    <span>{{cantidad}}</span>
+    <ion-button fill="clear" (click)="cantidad= cantidad+1" >+1</ion-button>
+    <ion-button fill="clear" (click)="cartService.agregarAlCarrito(producto,cantidad)"  >Agregar al carrito</ion-button>
   </ion-card>
 
 

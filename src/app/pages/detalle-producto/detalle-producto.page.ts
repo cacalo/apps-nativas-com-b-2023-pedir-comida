@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CATEGORIAS } from 'src/app/core/constants/categorias';
 import { Producto } from 'src/app/core/interfaces/producto';
+import { CartService } from 'src/app/core/services/cart.service';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -10,11 +11,16 @@ import { Producto } from 'src/app/core/interfaces/producto';
 })
 export class DetalleProductoPage  {
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    public cartService: CartService
+    ) {
     activatedRoute.params.subscribe(params => {
       this.buscarProducto(params['nombre']);
     })
   }
+
+  cantidad = 1;
 
   buscarProducto(nombreProductoABuscar:string){
     for (let i = 0; i < CATEGORIAS.length; i++) {
