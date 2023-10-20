@@ -35,6 +35,7 @@ export class CartService {
   }
 
   vaciarCarrito(){
+    this.carrito = [];
     this.guardarLocalStorage();
     this.calcularTotal();
   }
