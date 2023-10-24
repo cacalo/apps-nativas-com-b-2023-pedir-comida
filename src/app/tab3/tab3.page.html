@@ -15,7 +15,7 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-title>Productos</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-list>
@@ -25,23 +25,26 @@
           </ion-thumbnail>
           <ion-label>{{item.producto.nombre}} {{item.cantidad}}</ion-label>
         </ion-item>
-  
+
       </ion-list>
     </ion-card-content>
-    
-  </ion-card>
 
-    <ion-list [inset]="true">
-      <ion-item>
-        <ion-label>Subtotal ${{cartService.totalCarrito}}</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Descuentos</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Total</ion-label>
-      </ion-item>
-    </ion-list>      
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-list [inset]="true">
+        <ion-item>
+          <ion-label>Subtotal: ${{cartService.totalCarrito}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Descuentos: $</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Total: $</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
     <ion-button expand="block" (click)="realizarPedido()">Realizar pedido</ion-button>
 
