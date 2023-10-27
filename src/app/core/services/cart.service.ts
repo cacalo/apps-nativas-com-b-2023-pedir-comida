@@ -19,11 +19,19 @@ export class CartService {
   }
 
   agregarAlCarrito(producto:Producto,cantidad:number){
-    const productoActual:ProductoCarrito = {
-      cantidad: cantidad,
-      producto: producto
+    //Reviso si el producto existe en el carrito
+    const index = this.carrito.findIndex(item => item.producto.nombre === producto.nombre);
+    if(index === -1){
+      //Si es un producto nuevo creo el elemento producto y lo pongo en el carrito
+      const productoActual:ProductoCarrito = {
+        cantidad: cantidad,
+        producto: producto
+      }
+      this.carrito.push(productoActual);
+    } else {
+      //Si el producto ya existe, modifico el carrito para agregarle las unidades correspondientes
+      this.carrito[index].cantidad = this.carrito[index].cantidad + cantidad;
     }
-    this.carrito.push(productoActual);
     console.log(this.carrito)
     this.guardarLocalStorage()
     this.calcularTotal()
