@@ -35,10 +35,10 @@
         <ion-button fill="clear" (click)="cantidad= cantidad+1" >+1</ion-button>
       </div>
 
-      <ion-button fill="clear" (click)="cartService.agregarAlCarrito(producto,cantidad)">Agregar al carrito</ion-button>
+      <ion-button fill="clear" id="agregarAlCarrito" (click)="cartService.agregarAlCarrito(producto,cantidad)" [routerLink]="['/tabs/tab3']">Agregar al carrito</ion-button>
 
     </ion-card-content>
   </ion-card>
 
-
+  <ion-toast trigger="agregarAlCarrito" message="Producto agregado" [duration]="3000"></ion-toast>
 </ion-content>
