@@ -29,7 +29,8 @@ export class CartService {
     this.calcularTotal()
   }
 
-  eliminarProducto(){
+  eliminarProducto(nombre: string){
+    this.carrito = this.carrito.filter(item => item.producto.nombre !== nombre);
     this.guardarLocalStorage()
     this.calcularTotal()
   }

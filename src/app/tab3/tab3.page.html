@@ -24,8 +24,8 @@
             <img alt="{{item.producto.nombre}}" src="{{item.producto.imagen}}" />
           </ion-thumbnail>
           <ion-label>{{item.producto.nombre}} {{item.cantidad}}</ion-label>
+          <ion-button [fill]="'clear'" (click)="cartService.eliminarProducto(item.producto.nombre)"><ion-icon name="trash-outline"></ion-icon></ion-button>
         </ion-item>
-
       </ion-list>
     </ion-card-content>
 
